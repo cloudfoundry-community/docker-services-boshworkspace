@@ -1,0 +1,36 @@
+meta:
+  subnet_ids:
+    docker: (( merge ))
+
+properties:
+  template_only:
+    aws:
+      subnet_ids:
+        docker: (( meta.subnet_ids.docker ))
+
+
+networks:
+  - name: default
+    type: manual
+    subnets:
+      - range: 10.40.2.0/20
+        name: default_unused
+        reserved:
+          - 10.40.2.2 - 10.40.2.9
+        static:
+          - 10.40.2.10 - 10.40.2.255
+        gateway: 10.40.2.1
+        dns:
+          - 10.40.0.2
+        cloud_properties:
+          security_groups:
+            - docker
+          subnet: (( properties.template_only.aws.subnet_ids.docker ))
+
+resource_pools:
+  - name: default
+    cloud_properties:
+      instance_type: m1.large
+
+compilation:
+  cloud_properties: {}

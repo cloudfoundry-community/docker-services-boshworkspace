@@ -1,0 +1,5 @@
+.stemcells*
+.deployments*
+.releases*
+.stubs*
+

@@ -1,0 +1,43 @@
+meta:
+  # override this in your stub to set the environment name,
+  # which is used for the deployment name
+  #
+  # i.e. cf-tabasco
+  environment: ~
+
+  releases:
+  - name: docker-services
+    version: latest
+
+  stemcell: (( merge ))
+
+name: (( meta.environment ))
+
+director_uuid: (( merge ))
+
+releases: (( merge || meta.releases ))
+
+networks: (( merge ))
+
+jobs: (( merge ))
+
+properties: (( merge ))
+
+compilation:
+  workers: 6
+  network: default
+  reuse_compilation_vms: true
+  cloud_properties: (( merge ))
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  canary_watch_time: 30000-600000
+  update_watch_time: 5000-600000
+  serial: true
+
+resource_pools:
+  - network: default
+    name: default
+    stemcell: (( meta.stemcell ))
+    cloud_properties: (( merge ))

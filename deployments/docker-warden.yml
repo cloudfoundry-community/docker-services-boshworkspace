@@ -1,0 +1,25 @@
+---
+name: docker-warden
+director_uuid: current
+
+releases:
+  - name: docker
+    version: latest
+    git: https://github.com/cf-platform-eng/docker-boshrelease.git
+
+stemcells:
+  - name: bosh-warden-boshlite-ubuntu-trusty-go_agent
+    version: 389
+
+templates:
+  - docker-deployment.yml
+  - docker-properties.yml
+  - docker-jobs.yml
+  - docker-warden.yml
+meta:
+  nats:
+    user: nats
+    password: nats
+    port: 4222
+    machines:
+      - 10.244.0.6

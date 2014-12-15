@@ -1,0 +1,11 @@
+jobs:
+  - name: docker
+    templates:
+      - name: docker
+      - name: cf-containers-broker
+    instances: 1
+    resource_pool: default
+    persistent_disk: 65536
+    networks:
+      - name: default
+        static_ips: (( static_ips(1) ))
