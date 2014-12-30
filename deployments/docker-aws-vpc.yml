@@ -1,0 +1,27 @@
+---
+name: docker-aws-vpc
+director_uuid: DIRECTOR_UUID
+
+releases:
+  - name: docker
+    version: latest
+    git: https://github.com/cf-platform-eng/docker-boshrelease.git
+
+stemcells:
+  - name: bosh-aws-xen-ubuntu-trusty-go_agent
+    version: 2778
+
+templates:
+  - docker-deployment.yml
+  - docker-jobs.yml
+  - docker-properties.yml
+  - docker-aws-vpc.yml
+meta:
+  nats:
+    user: nats
+    password: nats
+    port: 4222
+    machines:
+      - NATS_MACHINE
+  subnet_ids:
+    docker: SUBNET_ID

@@ -1,3 +1,5 @@
+networks: (( merge ))
+
 jobs:
   - name: docker
     templates:

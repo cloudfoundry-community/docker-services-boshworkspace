@@ -13,15 +13,15 @@ networks:
   - name: default
     type: manual
     subnets:
-      - range: 10.40.2.0/20
+      - range: 10.10.4.0/24
         name: default_unused
         reserved:
-          - 10.40.2.2 - 10.40.2.9
+          - 10.10.4.2 - 10.10.4.9
         static:
-          - 10.40.2.10 - 10.40.2.255
-        gateway: 10.40.2.1
+          - 10.10.4.10 - 10.10.4.250
+        gateway: 10.10.4.1
         dns:
-          - 10.40.0.2
+          - 10.10.0.2
         cloud_properties:
           security_groups:
             - docker
@@ -33,4 +33,5 @@ resource_pools:
       instance_type: m1.large
 
 compilation:
-  cloud_properties: {}
+  cloud_properties:
+    instance_type: c1.medium
