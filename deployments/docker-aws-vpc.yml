@@ -17,6 +17,9 @@ templates:
   - docker-properties.yml
   - docker-aws-vpc.yml
 meta:
+  cfcontainersbroker:
+    cc_api_uri: CC_API_URL
+    external_host: EXTERNAL_HOST
   nats:
     user: nats
     password: nats
