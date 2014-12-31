@@ -24,7 +24,7 @@ bosh deploy
 ### Deploy Docker Services
 ```
 bosh deployment docker-warden
-bosh prepare deploÂyment
+bosh prepare deployment
 bosh deploy
 cf create-service-broker docker containers containers http://cf-containers-broker.10.244.0.34.xip.io
 # List services
