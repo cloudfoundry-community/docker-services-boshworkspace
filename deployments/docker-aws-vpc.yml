@@ -16,6 +16,7 @@ templates:
   - docker-jobs.yml
   - docker-properties.yml
   - docker-aws-vpc.yml
+
 meta:
   cfcontainersbroker:
     cc_api_uri: CC_API_URL
@@ -25,6 +26,9 @@ meta:
     password: nats
     port: 4222
     machines:
-      - NATS_MACHINE
+      - 10.10.3.10
   subnet_ids:
     docker: SUBNET_ID
+  security_groups:
+    - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS
+  instance_type: m1.large
