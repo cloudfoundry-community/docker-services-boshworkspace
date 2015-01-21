@@ -1,13 +1,13 @@
 meta:
   subnet_ids:
     docker: (( merge ))
+  security_groups: (( merge ))
 
 properties:
   template_only:
     aws:
       subnet_ids:
         docker: (( meta.subnet_ids.docker ))
-
 
 networks:
   - name: default
@@ -23,8 +23,7 @@ networks:
         dns:
           - 10.10.0.2
         cloud_properties:
-          security_groups:
-            - docker
+          security_groups: (( meta.security_groups ))
           subnet: (( properties.template_only.aws.subnet_ids.docker ))
 
 resource_pools:
