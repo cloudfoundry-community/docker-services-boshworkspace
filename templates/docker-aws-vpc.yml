@@ -2,6 +2,7 @@ meta:
   subnet_ids:
     docker: (( merge ))
   security_groups: (( merge ))
+  instance_type: m1.large
 
 properties:
   template_only:
@@ -29,7 +30,7 @@ networks:
 resource_pools:
   - name: default
     cloud_properties:
-      instance_type: m1.large
+      instance_type: (( meta.instance_type ))
 
 compilation:
   cloud_properties:

@@ -31,3 +31,4 @@ meta:
     docker: SUBNET_ID
   security_groups:
     - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS
+  instance_type: m1.large
