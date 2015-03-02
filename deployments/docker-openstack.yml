@@ -18,12 +18,18 @@ templates:
   - docker-openstack.yml
 
 meta:
+  openstack:
+    net_id: CF_SUBNET1
+    auth_url: OS_AUTHURL
+    tenant: OS_TENANT
+    username: OS_USERNAME
+    api_key: OS_APIKEY
   cfcontainersbroker:
     cc_api_uri: CC_API_URL
     external_host: EXTERNAL_HOST
   nats:
     user: nats
-    password: nats
+    password: c1oudc0w
     port: 4222
     machines:
       - NATS_HOST
