@@ -1,0 +1,45 @@
+---
+name: docker-openstack
+director_uuid: DIRECTOR_UUID
+
+releases:
+  - name: docker
+    version: latest
+    git: https://github.com/cf-platform-eng/docker-boshrelease.git
+
+stemcells:
+  - name: bosh-openstack-kvm-ubuntu-trusty-go_agent
+    version: 2830
+
+templates:
+  - docker-deployment.yml
+  - docker-jobs.yml
+  - docker-properties.yml
+  - docker-openstack.yml
+
+meta:
+  openstack:
+    net_id: CF_SUBNET1
+    auth_url: OS_AUTHURL
+    tenant: OS_TENANT
+    username: OS_USERNAME
+    api_key: OS_APIKEY
+  cfcontainersbroker:
+    cc_api_uri: CC_API_URL
+    external_host: EXTERNAL_HOST
+  nats:
+    user: nats
+    password: c1oudc0w
+    port: 4222
+    machines:
+      - NATS_HOST
+  subnet_ids:
+    docker: SUBNET_ID
+  security_groups:
+    - DOCKER_SG
+  instance_type: m1.large
+  ipmask: "IPMASK"
+  dk1_quad: ".2"
+  dns_servers:
+    - 8.8.8.8
+    - 8.8.4.4

@@ -1,0 +1,36 @@
+meta:
+  openstack: (( merge ))
+  ipmask: (( merge ))
+  dk1_quad: (( merge ))
+  dns_servers: (( merge ))
+  subnet_ids:
+    docker: (( merge ))
+  security_groups: (( merge ))
+  instance_type: (( merge ))
+  subnets:
+    - range: (( meta.ipmask meta.dk1_quad ".0/24" ))
+      name: default_unused
+      reserved:
+        - (( meta.ipmask meta.dk1_quad ".2 - " meta.ipmask meta.dk1_quad ".190" ))
+      static:
+        - (( meta.ipmask meta.dk1_quad ".200 - " meta.ipmask meta.dk1_quad ".250" ))
+      gateway: (( meta.ipmask meta.dk1_quad ".1" ))
+      dns: (( meta.dns_servers ))
+      cloud_properties:
+        security_groups: (( meta.security_groups ))
+        subnet: (( meta.subnet_ids.docker ))
+        net_id: (( meta.subnet_ids.docker ))
+
+networks:
+  - name: default
+    type: manual
+    subnets: (( meta.subnets ))
+
+resource_pools:
+  - name: default
+    cloud_properties:
+      instance_type: (( meta.instance_type ))
+
+compilation:
+  cloud_properties:
+    instance_type: (( meta.instance_type ))
