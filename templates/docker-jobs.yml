@@ -10,4 +10,3 @@ jobs:
     persistent_disk: 65536
     networks:
       - name: default
-        static_ips: (( static_ips(1) ))
