@@ -39,10 +39,32 @@ cf enable-service-access <service_name>
 
 ### Deploy on AWS VPC
 
-Change and target the `deployments/docker-aws-vpc.yml` to deploy it into a VPC.
+Assuming you used [terraform-aws-cf-install](https://github.com/cloudfoundry-community/terraform-aws-cf-install), ssh onto the Bastion server and run:
+```
+cd ~/workspace/deployments
+git clone https://github.com/cloudfoundry-community/docker-services-boshworkspace.git
+cd docker-services-boshworkspace
+```
+
+There is a helper script in `shell/populate-docker-aws-vpc` which will extract information from the cf-boshworkspace deployment on the bastion server and populate the variables in `deployments/docker-aws-vpc.yml`, a copy of the original file will be left in `deployments/docker-aws-vpc.yml.orig`.  Run the following on the bastion server:
+```
+cd ~/workspace/deployments/docker-services-boshworkspace/shell
+./populate-docker-aws-vpc
+```
+
+You will still need to modify the SUBNET_ID in `deployments/docker-aws-vpc.yml`.  In AWS Console navigate to VPC > Subnets and select a subnet named "docker", the subnet id will be in the format "subnet-xxxxxxxx" and replace the value SUBNET_ID in the file
+
+Your deployment manifest is now populated, launch the deployment from the bastion server:
+```
+cd ~/workspace/deployments/docker-services-boshworkspace
+bosh deployment docker-aws-vpc
+bosh prepare deployment
+bosh -n deploy
+```
 
 By default, it assumes you are deploying into a `10.10.5.0/24` subnet. This is an optimization for users of [terraform-aws-cf-install](https://github.com/cloudfoundry-community/terraform-aws-cf-install) which creates this subnet for us.
 
+#### Alternate Network Configurations
 If you want to deploy into another subnet CIDR, then add a `meta.subnets` to your deployment file to look something like:
 
 ```yaml
