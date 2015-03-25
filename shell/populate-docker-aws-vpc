@@ -1,27 +1,22 @@
 #!/bin/bash
 
-assure_string_in_file() {
+replace_string_in_file() {
   assurefilename=$1
   assuresearchString=$2
   assurereplaceString=$3
 
-  if grep -q "$assuresearchString" "$assurefilename"; then
-    re="s#^.*$assuresearchString.*#$assurereplaceString#"
-    sed -i "${re}" "$assurefilename"
-    (( "$?" == "0" )) ||
-    echo "Could not execute execute sed command replace $assuresearchString with $assurereplaceString in file $assurefilename, terminating install."
-  else
-    echo "$assurereplaceString" >> "$assurefilename"
-    (("$?" == "0")) ||
-    echo "Unable to set $assuresearchString in $assurefilename, terminating install."
-  fi
+  re="s#^.*$assuresearchString.*#$assurereplaceString#"
+  sed -i "${re}" "$assurefilename"
+  (( "$?" == "0" )) ||
+  echo "Could not execute execute sed command replace $assuresearchString with $assurereplaceString in file $assurefilename, terminating install."
 }
 
 DIRECTOR_UUID=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-tiny.yml | grep director_uuid | awk '{print $2}')
 SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-tiny.yml | grep security_groups  | awk '{print $2}')
 NATS_IP=$(cat ~/workspace/deployments/cf-boshworkspace/.deployments/cf-aws-tiny.yml | grep address | head -1 | awk '{print $2}')
+NATS_PASSWORD=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-tiny.yml | grep " secret"  | awk '{print $2}')
 DOMAIN=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-tiny.yml | grep " domain"  | awk '{print $2}')
-EXTERNAL_HOST="cf-container-broker.${DOMAIN}"
+EXTERNAL_HOST="cf-containers-broker.${DOMAIN}"
 CC_API_URL="http://api.${DOMAIN}"
 
 echo "DIRECTOR_UUID:                            ${DIRECTOR_UUID}"
@@ -33,11 +28,12 @@ echo "SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS:  ${SECURITY_GROUP_ACCESSIBLE_BY_C
 
 filename="/home/ubuntu/workspace/deployments/docker-services-boshworkspace/deployments/docker-aws-vpc.yml"
 cp "${filename}" "${filename}.orig"
-assure_string_in_file $filename "director_uuid: DIRECTOR_UUID"                   "director_uuid: ${DIRECTOR_UUID}"
-assure_string_in_file $filename "    cc_api_uri: CC_API_URL"                     "    cc_api_uri: ${CC_API_URL}"
-assure_string_in_file $filename "    external_host: EXTERNAL_HOST"               "    external_host: ${EXTERNAL_HOST}"
-assure_string_in_file $filename "      - 10.10.3.10"                             "      - ${NATS_IP}"
-assure_string_in_file $filename "    - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS"  "    - ${SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS}"
+replace_string_in_file $filename "director_uuid: DIRECTOR_UUID"                   "director_uuid: ${DIRECTOR_UUID}"
+replace_string_in_file $filename "    cc_api_uri: CC_API_URL"                     "    cc_api_uri: ${CC_API_URL}"
+replace_string_in_file $filename "    external_host: EXTERNAL_HOST"               "    external_host: ${EXTERNAL_HOST}"
+replace_string_in_file $filename "    password: nats"                             "    password: ${NATS_PASSWORD}"
+replace_string_in_file $filename "      - 10.10.3.10"                             "      - ${NATS_IP}"
+replace_string_in_file $filename "    - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS"  "    - ${SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS}"
 
 echo "*********"
 echo "$filename has been updated, remember to update the SUBNET_ID"
