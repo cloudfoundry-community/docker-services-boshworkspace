@@ -1,0 +1,61 @@
+#!/bin/bash
+
+replace_string_in_file() {
+  assurefilename=$1
+  assuresearchString=$2
+  assurereplaceString=$3
+
+  re="s#^.*$assuresearchString.*#$assurereplaceString#"
+  sed -i "${re}" "$assurefilename"
+  (( "$?" == "0" )) ||
+  echo "Could not execute execute sed command replace $assuresearchString with $assurereplaceString in file $assurefilename, terminating install."
+}
+ymlFile="cf-openstack-tiny.yml"
+ymlFolder="${HOME}/workspace/deployments/cf-boshworkspace/"
+
+DIRECTOR_UUID=$(cat ${ymlFolder}deployments/${ymlFile} | grep director_uuid | awk '{print $2}')
+DOCKER_SG=$(cat ${ymlFolder}deployments/${ymlFile} | grep security_groups  | awk '{print $3}')
+NATS_HOST=$(cat ${ymlFolder}.deployments/${ymlFile} | grep address | head -1 | awk '{print $2}')
+NATS_PASSWORD=$(cat ${ymlFolder}deployments/${ymlFile} | grep " secret"  | awk '{print $2}')
+DOMAIN=$(cat ${ymlFolder}deployments/${ymlFile} | grep " domain"  | awk '{print $2}')
+EXTERNAL_HOST="cf-containers-broker.${DOMAIN}"
+CC_API_URL="http://api.${DOMAIN}"
+CF_SUBNET1=$(cat ${ymlFolder}deployments/${ymlFile} | grep " net_id"  | awk '{print $2}')
+OS_AUTHURL=$(cat ${ymlFolder}deployments/${ymlFile} | grep " auth_url"  | awk '{print $2}')
+OS_TENANT=$(cat ${ymlFolder}deployments/${ymlFile} | grep " tenant"  | awk '{print $2}')
+OS_USERNAME=$(cat ${ymlFolder}deployments/${ymlFile} | grep " username"  | awk '{print $2}')
+OS_APIKEY=$(cat ${ymlFolder}deployments/${ymlFile} | grep " api_key"  | awk '{print $2}')
+IPMASK=$(cat ${ymlFolder}deployments/${ymlFile} | grep " ipmask"  | awk '{print $2}')
+
+
+echo "DIRECTOR_UUID:                            ${DIRECTOR_UUID}"
+echo "CF_SUBNET1:                               ${CF_SUBNET1}"
+echo "OS_AUTHURL:                               ${OS_AUTHURL}"
+echo "OS_TENANT:                                ${OS_TENANT}"
+echo "OS_USERNAME:                              ${OS_USERNAME}"
+echo "OS_APIKEY:                                ${OS_APIKEY}"
+echo "CC_API_URL:                               ${CC_API_URL}"
+echo "EXTERNAL_HOST:                            ${EXTERNAL_HOST}"
+echo "NATS_HOST:                                ${NATS_HOST}"
+echo "SUBNET_ID:                                Get this from OpenStack > Project > Networks > 'Internal Net' > 'docker-services-subnet' > Network ID"
+echo "DOCKER_SG:                                ${DOCKER_SG}"
+echo "IPMASK:                                   ${IPMASK}"
+echo "NATS_PASSWORD:                            ${NATS_PASSWORD}"
+
+filename="/home/ubuntu/workspace/deployments/docker-services-boshworkspace/deployments/docker-openstack.yml"
+cp "${filename}" "${filename}.orig"
+replace_string_in_file $filename "director_uuid: DIRECTOR_UUID"      "director_uuid: ${DIRECTOR_UUID}"
+replace_string_in_file $filename "    cc_api_uri: CC_API_URL"        "    cc_api_uri: ${CC_API_URL}"
+replace_string_in_file $filename "    external_host: EXTERNAL_HOST"  "    external_host: ${EXTERNAL_HOST}"
+replace_string_in_file $filename "    password: c1oudc0w"            "    password: ${NATS_PASSWORD}"
+replace_string_in_file $filename "      - NATS_HOST"                 "      - ${NATS_HOST}"
+replace_string_in_file $filename "    - DOCKER_SG"                   "    - ${DOCKER_SG}"
+replace_string_in_file $filename "    net_id: CF_SUBNET1"            "    net_id: ${CF_SUBNET1}"
+replace_string_in_file $filename "    auth_url: OS_AUTHURL"          "    auth_url: ${OS_AUTHURL}"
+replace_string_in_file $filename "    tenant: OS_TENANT"             "    tenant: ${OS_TENANT}"
+replace_string_in_file $filename "    username: OS_USERNAME"         "    username: ${OS_USERNAME}"
+replace_string_in_file $filename "    api_key: OS_APIKEY"            "    api_key: ${OS_APIKEY}"
+replace_string_in_file $filename "  ipmask: \"IPMASK\""              "  ipmask: \"${IPMASK}\""
+
+echo "*********"
+echo "$filename has been updated, remember to update the SUBNET_ID"

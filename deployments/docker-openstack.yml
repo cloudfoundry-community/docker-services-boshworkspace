@@ -39,7 +39,7 @@ meta:
     - DOCKER_SG
   instance_type: m1.large
   ipmask: "IPMASK"
-  dk1_quad: ".2"
+  dk1_quad: ".5"
   dns_servers:
     - 8.8.8.8
     - 8.8.4.4
