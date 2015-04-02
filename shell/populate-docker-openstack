@@ -55,7 +55,9 @@ replace_string_in_file $filename "    auth_url: OS_AUTHURL"          "    auth_u
 replace_string_in_file $filename "    tenant: OS_TENANT"             "    tenant: ${OS_TENANT}"
 replace_string_in_file $filename "    username: OS_USERNAME"         "    username: ${OS_USERNAME}"
 replace_string_in_file $filename "    api_key: OS_APIKEY"            "    api_key: ${OS_APIKEY}"
-replace_string_in_file $filename "  ipmask: \"IPMASK\""              "  ipmask: \"${IPMASK}\""
+replace_string_in_file $filename "  ipmask: \"IPMASK\""              "  ipmask: ${IPMASK}"
+
+
 
 echo "*********"
 echo "$filename has been updated, remember to update the SUBNET_ID"
