@@ -9,7 +9,7 @@ releases:
 
 stemcells:
   - name: bosh-openstack-kvm-ubuntu-trusty-go_agent
-    version: 2830
+    version: 2859
 
 templates:
   - docker-deployment.yml
@@ -39,7 +39,7 @@ meta:
     - DOCKER_SG
   instance_type: m1.large
   ipmask: "IPMASK"
-  dk1_quad: ".5"
+  dk1_quad: "."
   dns_servers:
     - 8.8.8.8
     - 8.8.4.4
