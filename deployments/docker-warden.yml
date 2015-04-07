@@ -20,8 +20,8 @@ meta:
   cfcontainersbroker:
     cc_api_uri: "https://api.10.244.0.34.xip.io"
     external_host: "cf-containers-broker.10.244.0.34.xip.io"
-    auth_username: 'containers_user'
-    auth_password: 'containers_pass'
+    auth_username: 'containers'
+    auth_password: 'containers'
   nats:
     user: nats
     password: nats

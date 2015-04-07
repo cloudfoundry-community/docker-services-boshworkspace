@@ -2,6 +2,8 @@ meta:
   cfcontainersbroker:
     cc_api_uri: (( merge || "https://api.10.244.0.34.xip.io" ))
     external_host: (( merge || "cf-containers-broker.10.244.0.34.xip.io" ))
+    auth_username: (( merge || "containers" ))
+    auth_password: (( merge || "containers" ))
     protocol: http
   nats: (( merge || meta.nats ))
 

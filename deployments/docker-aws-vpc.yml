@@ -21,8 +21,8 @@ meta:
   cfcontainersbroker:
     cc_api_uri: CC_API_URL
     external_host: EXTERNAL_HOST
-    auth_username: 'containers_user'
-    auth_password: 'containers_pass'
+    auth_username: 'containers'
+    auth_password: 'containers'
   nats:
     user: nats
     password: nats
