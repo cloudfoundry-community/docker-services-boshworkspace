@@ -2,7 +2,7 @@ meta:
   subnet_ids:
     docker: (( merge ))
   security_groups: (( merge ))
-  instance_type: m1.large
+  instance_type: m3.large
   subnets:
     - range: 10.10.5.0/24
       name: default_unused
