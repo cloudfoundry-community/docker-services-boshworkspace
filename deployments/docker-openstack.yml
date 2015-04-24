@@ -9,7 +9,7 @@ releases:
 
 stemcells:
   - name: bosh-openstack-kvm-ubuntu-trusty-go_agent
-    version: 2859
+    version: 2941
 
 templates:
   - docker-deployment.yml
