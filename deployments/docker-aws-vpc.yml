@@ -9,7 +9,7 @@ releases:
 
 stemcells:
   - name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2778
+    version: 2941
 
 templates:
   - docker-deployment.yml
