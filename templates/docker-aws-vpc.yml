@@ -26,7 +26,10 @@ resource_pools:
   - name: default
     cloud_properties:
       instance_type: (( meta.instance_type ))
+      ephemeral_disk:
+        size: 163840
+        type: gp2
 
 compilation:
   cloud_properties:
-    instance_type: c1.medium
+    instance_type: c3.medium
