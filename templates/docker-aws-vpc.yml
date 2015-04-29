@@ -32,4 +32,4 @@ resource_pools:
 
 compilation:
   cloud_properties:
-    instance_type: c3.medium
+    instance_type: c3.large
