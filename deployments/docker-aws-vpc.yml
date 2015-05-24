@@ -28,7 +28,7 @@ meta:
     password: nats
     port: 4222
     machines:
-      - 10.10.3.10
+      - 10.10.3.11
   subnet_ids:
     docker: SUBNET_ID
   security_groups:
