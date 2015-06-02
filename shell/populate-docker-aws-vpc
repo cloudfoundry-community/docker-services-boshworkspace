@@ -14,7 +14,7 @@ replace_string_in_file() {
 }
 
 DIRECTOR_UUID=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-${deploymentSize}.yml | grep director_uuid | awk '{print $2}')
-SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-${deploymentSize}.yml | grep security_groups  | awk '{print $2}')
+SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS=$(awk 'f{print;f=0} /security_groups/{f=1}' ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-${deploymentSize}.yml | sed -e 's/^.*- //')
 NATS_IP=$(cat ~/workspace/deployments/cf-boshworkspace/.deployments/cf-aws-${deploymentSize}.yml | grep address | head -1 | awk '{print $2}')
 NATS_PASSWORD=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-${deploymentSize}.yml | grep " secret"  | awk '{print $2}')
 DOMAIN=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-${deploymentSize}.yml | grep " domain"  | awk '{print $2}')
