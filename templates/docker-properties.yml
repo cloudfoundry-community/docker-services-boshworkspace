@@ -43,7 +43,7 @@ properties:
             name: 'free'
             container:
               backend: 'docker'
-              image: 'frodenas/postgresql'
+              image: 'lnguyen/postgresql'
               tag: 'latest'
               persistent_volumes:
                 - '/data'
