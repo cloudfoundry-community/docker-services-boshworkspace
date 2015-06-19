@@ -15,7 +15,7 @@ ymlFolder="${HOME}/workspace/deployments/cf-boshworkspace/"
 
 DIRECTOR_UUID=$(cat ${ymlFolder}deployments/${ymlFile} | grep director_uuid | awk '{print $2}')
 DOCKER_SG=$(awk 'f{print;f=0} /security_groups/{f=1}' ${ymlFolder}deployments/${ymlFile} | sed -e 's/^.*- //')
-NATS_HOST=$(cat ${ymlFolder}.deployments/${ymlFile} | grep address | head -1 | awk '{print $2}')
+NATS_HOST=$(cat ${ymlFolder}.deployments/${ymlFile} | grep nats -A 1 | grep address | awk '{print $2}')
 NATS_PASSWORD=$(cat ${ymlFolder}deployments/${ymlFile} | grep " secret"  | awk '{print $2}')
 DOMAIN=$(cat ${ymlFolder}deployments/${ymlFile} | grep " domain"  | awk '{print $2}')
 EXTERNAL_HOST="cf-containers-broker.${DOMAIN}"
