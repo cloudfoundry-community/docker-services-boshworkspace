@@ -6,9 +6,16 @@ meta:
     auth_password: (( merge || "containers" ))
     protocol: http
   nats: (( merge || meta.nats ))
+  https_proxy: (( merge || ~ ))
+  http_proxy: (( merge || ~ ))
+  no_proxy: (( merge || ~ ))
 
 properties:
   nats: (( meta.nats ))
+  env:
+    https_proxy: (( meta.https_proxy ))
+    http_proxy:  (( meta.http_proxy ))
+    no_proxy:    (( meta.no_proxy ))
   cfcontainersbroker:
     auth_username: (( meta.cfcontainersbroker.auth_username ))
     auth_password: (( meta.cfcontainersbroker.auth_password ))
