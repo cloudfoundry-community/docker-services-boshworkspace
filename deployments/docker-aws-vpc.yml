@@ -18,11 +18,11 @@ templates:
   - docker-aws-vpc.yml
 
 meta:
-  cfcontainersbroker:
-    cc_api_uri: CC_API_URL
-    external_host: EXTERNAL_HOST
-    auth_username: 'containers'
-    auth_password: 'containers'
+  cf_api_uri: CF_API_URL
+  broker:
+    host: EXTERNAL_HOST
+    username: 'containers'
+    password: 'containers'
   nats:
     user: nats
     password: nats
