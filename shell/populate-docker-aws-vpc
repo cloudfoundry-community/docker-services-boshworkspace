@@ -19,10 +19,10 @@ NATS_IP=$(cat ~/workspace/deployments/cf-boshworkspace/.deployments/cf-aws-${dep
 NATS_PASSWORD=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-${deploymentSize}.yml | grep " secret"  | awk '{print $2}')
 DOMAIN=$(cat ~/workspace/deployments/cf-boshworkspace/deployments/cf-aws-${deploymentSize}.yml | grep " domain"  | awk '{print $2}')
 EXTERNAL_HOST="cf-containers-broker.${DOMAIN}"
-CC_API_URL="http://api.${DOMAIN}"
+CF_API_URL="http://api.${DOMAIN}"
 
 echo "DIRECTOR_UUID:                            ${DIRECTOR_UUID}"
-echo "CC_API_URL:                               ${CC_API_URL}"
+echo "CF_API_URL:                               ${CF_API_URL}"
 echo "EXTERNAL_HOST:                            ${EXTERNAL_HOST}"
 echo "NATS_IP:                                  ${NATS_IP}"
 echo "SUBNET_ID:                                Get this from AWS Console > VPC > Subnets > 'docker'"
@@ -31,7 +31,7 @@ echo "SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS:  ${SECURITY_GROUP_ACCESSIBLE_BY_C
 filename="/home/ubuntu/workspace/deployments/docker-services-boshworkspace/deployments/docker-aws-vpc.yml"
 cp "${filename}" "${filename}.orig"
 replace_string_in_file $filename "director_uuid: DIRECTOR_UUID"                   "director_uuid: ${DIRECTOR_UUID}"
-replace_string_in_file $filename "    cc_api_uri: CC_API_URL"                     "    cc_api_uri: ${CC_API_URL}"
+replace_string_in_file $filename "    cc_api_uri: CF_API_URL"                     "    cc_api_uri: ${CF_API_URL}"
 replace_string_in_file $filename "    external_host: EXTERNAL_HOST"               "    external_host: ${EXTERNAL_HOST}"
 replace_string_in_file $filename "    password: nats"                             "    password: ${NATS_PASSWORD}"
 replace_string_in_file $filename "      - 10.10.3.10"                             "      - ${NATS_IP}"

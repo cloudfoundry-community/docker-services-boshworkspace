@@ -4,7 +4,7 @@ director_uuid: current
 
 releases:
   - name: docker
-    version: latest
+    version: 15
     git: https://github.com/cf-platform-eng/docker-boshrelease.git
 
 stemcells:
@@ -17,11 +17,11 @@ templates:
   - docker-jobs.yml
   - docker-warden.yml
 meta:
-  cfcontainersbroker:
-    cc_api_uri: "https://api.10.244.0.34.xip.io"
-    external_host: "cf-containers-broker.10.244.0.34.xip.io"
-    auth_username: 'containers'
-    auth_password: 'containers'
+  cf_api_uri: "https://api.10.244.0.34.xip.io"
+  broker:
+    host: "cf-containers-broker.10.244.0.34.xip.io"
+    username: 'containers'
+    password: 'containers'
   nats:
     user: nats
     password: nats
