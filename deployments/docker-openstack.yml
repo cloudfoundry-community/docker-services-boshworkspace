@@ -4,7 +4,7 @@ director_uuid: DIRECTOR_UUID
 
 releases:
   - name: docker
-    version: latest
+    version: 15
     git: https://github.com/cf-platform-eng/docker-boshrelease.git
 
 stemcells:
