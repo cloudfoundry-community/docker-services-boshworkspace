@@ -1,5 +1,5 @@
 ---
-name: docker-warden
+name: docker-swarm-warden
 director_uuid: current
 
 releases:

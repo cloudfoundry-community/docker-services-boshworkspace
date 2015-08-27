@@ -1,6 +1,6 @@
 ---
-name: docker-warden
-director_uuid: current
+name: docker-swarm-aws-vpc
+director_uuid: DIRECTOR_UUID
 
 releases:
   - name: docker
@@ -8,19 +8,19 @@ releases:
     git: https://github.com/cf-platform-eng/docker-boshrelease.git
 
 stemcells:
-  - name: bosh-warden-boshlite-ubuntu-trusty-go_agent
-    version: 389
+  - name: bosh-aws-xen-ubuntu-trusty-go_agent
+    version: 2941
 
 templates:
   - docker-deployment.yml
   - docker-properties.yml
   - docker-swarm-jobs.yml
-  - docker-warden.yml
-  
+  - docker-aws-vpc.yml
+
 meta:
-  cf_api_uri: "https://api.10.244.0.34.xip.io"
+  cf_api_uri: CF_API_URL
   broker:
-    host: "cf-containers-broker.10.244.0.34.xip.io"
+    host: EXTERNAL_HOST
     username: 'containers'
     password: 'containers'
   nats:
@@ -28,4 +28,9 @@ meta:
     password: nats
     port: 4222
     machines:
-      - 10.244.0.6
+      - 10.10.3.11
+  subnet_ids:
+    docker: SUBNET_ID
+  security_groups:
+    - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS
+  instance_type: m3.large
