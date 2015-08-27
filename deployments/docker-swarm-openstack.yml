@@ -1,5 +1,5 @@
 ---
-name: docker-openstack
+name: docker-swarm-openstack
 director_uuid: DIRECTOR_UUID
 
 releases:
@@ -14,7 +14,7 @@ stemcells:
 templates:
   - docker-deployment.yml
   - docker-properties.yml
-  - docker-jobs.yml
+  - docker-swarm-jobs.yml
   - docker-openstack.yml
 
 meta:

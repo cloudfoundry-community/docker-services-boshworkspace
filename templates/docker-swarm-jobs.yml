@@ -1,0 +1,55 @@
+meta:
+  instances:
+    docker: (( merge || 2 ))
+
+networks: (( merge ))
+
+jobs:
+  - name: docker
+    templates:
+      - name: docker
+    instances: (( meta.instances.docker ))
+    resource_pool: default
+    persistent_disk: 65536
+    networks:
+      - name: default
+        default: [dns, gateway]
+        static_ips: (( static_ips(1, 2, 3, 4, 5) ))
+
+  - name: broker
+    templates:
+      - name: swarm_manager
+      - name: cf-containers-broker
+    instances: 1
+    resource_pool: default
+    persistent_disk: 2048
+    networks:
+      - name: default
+        default: [dns, gateway]
+        static_ips: (( static_ips(0) ))
+
+  - name: fetch-containers
+    templates:
+      - name: fetch-containers
+    instances: 1
+    resource_pool: default
+    lifecycle: errand
+    networks:
+      - name: default
+        default: [dns, gateway]
+
+properties:
+  docker:
+    tcp_address: 0.0.0.0
+
+  broker:
+    fetch_images: false # use `bosh run errand fetch-containers` so broker is not blocked
+    docker_url: (( "http://" jobs.broker.networks.default.static_ips.[0] ":" swarm_manager.port ))
+    max_containers: 28000 # http://git.io/vGJkh
+
+  fetch_containers:
+    docker_url: (( broker.docker_url ))
+
+  swarm_manager:
+    port: "2375"
+    docker_nodes: (( jobs.docker.networks.default.static_ips ))
