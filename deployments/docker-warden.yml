@@ -14,7 +14,7 @@ stemcells:
 templates:
   - docker-deployment.yml
   - docker-properties.yml
-  - docker-swarm-jobs.yml
+  - docker-jobs.yml
   - docker-warden.yml
   
 meta:
