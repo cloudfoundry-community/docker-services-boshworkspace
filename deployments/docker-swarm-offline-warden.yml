@@ -1,0 +1,36 @@
+---
+name: docker-swarm-offline-warden
+director_uuid: current
+
+releases:
+  - name: docker-broker-images
+    version: latest
+    git: https://github.com/cloudfoundry-community/docker-broker-images-boshrelease
+    
+  - name: docker
+    version: 16
+    git: https://github.com/cf-platform-eng/docker-boshrelease.git
+
+stemcells:
+  - name: bosh-warden-boshlite-ubuntu-trusty-go_agent
+    version: 389
+
+templates:
+  - docker-deployment.yml
+  - docker-properties.yml
+  - docker-offline.yml
+  - docker-swarm-jobs.yml
+  - docker-warden.yml
+  
+meta:
+  cf_api_uri: "https://api.10.244.0.34.xip.io"
+  broker:
+    host: "cf-containers-broker.10.244.0.34.xip.io"
+    username: 'containers'
+    password: 'containers'
+  nats:
+    user: nats
+    password: nats
+    port: 4222
+    machines:
+      - 10.244.0.6
