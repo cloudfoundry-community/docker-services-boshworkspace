@@ -18,7 +18,7 @@ templates:
   - docker-aws-vpc.yml
 
 meta:
-  cf_api_uri: CF_API_URL
+  cf_api_url: CF_API_URL
   broker:
     host: EXTERNAL_HOST
     username: 'containers'
