@@ -8,6 +8,7 @@ jobs:
   - name: docker
     templates:
       - name: docker
+        release: docker
     instances: (( meta.instances.docker ))
     resource_pool: default
     persistent_disk: 65536
@@ -19,7 +20,9 @@ jobs:
   - name: broker
     templates:
       - name: swarm_manager
+        release: docker
       - name: cf-containers-broker
+        release: docker
     instances: 1
     resource_pool: default
     persistent_disk: 2048
@@ -31,6 +34,7 @@ jobs:
   - name: fetch-containers
     templates:
       - name: fetch-containers
+        release: docker
     instances: 1
     resource_pool: default
     lifecycle: errand
@@ -44,7 +48,7 @@ properties:
 
   broker:
     fetch_images: false # use `bosh run errand fetch-containers` so broker is not blocked
-    docker_url: (( "http://" jobs.broker.networks.default.static_ips.[0] ":" swarm_manager.port ))
+    docker_url: (( "tcp://" jobs.broker.networks.default.static_ips.[0] ":" swarm_manager.port ))
     max_containers: 28000 # http://git.io/vGJkh
 
   fetch_containers:
