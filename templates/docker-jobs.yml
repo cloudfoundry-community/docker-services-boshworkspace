@@ -4,9 +4,13 @@ jobs:
   - name: docker
     templates:
       - name: docker
+        release: docker
       - name: cf-containers-broker
+        release: docker
     instances: 1
     resource_pool: default
     persistent_disk: 65536
     networks:
       - name: default
+        default: [dns, gateway]
+        static_ips: (( static_ips(1, 2, 3, 4, 5) ))

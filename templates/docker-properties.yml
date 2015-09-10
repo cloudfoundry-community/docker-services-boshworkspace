@@ -14,6 +14,7 @@ properties:
   docker: ~
   swarm_manager: ~
   fetch_containers: ~
+  docker_broker_images: ~
   nats: (( meta.nats ))
   env:
     https_proxy: (( meta.https_proxy ))

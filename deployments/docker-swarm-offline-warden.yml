@@ -1,10 +1,14 @@
 ---
-name: docker-warden
+name: docker-swarm-offline-warden
 director_uuid: current
 
 releases:
+  - name: docker-broker-images
+    version: latest
+    git: https://github.com/cloudfoundry-community/docker-broker-images-boshrelease
+    
   - name: docker
-    version: 15
+    version: 16
     git: https://github.com/cf-platform-eng/docker-boshrelease.git
 
 stemcells:
@@ -14,7 +18,8 @@ stemcells:
 templates:
   - docker-deployment.yml
   - docker-properties.yml
-  - docker-jobs.yml
+  - docker-offline.yml
+  - docker-swarm-jobs.yml
   - docker-warden.yml
   
 meta:
