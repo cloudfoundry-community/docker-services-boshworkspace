@@ -1,36 +1,32 @@
 ---
 name: docker-aws-vpc
 director_uuid: DIRECTOR_UUID
-
 releases:
-  - name: docker
-    version: 15
-    git: https://github.com/cf-platform-eng/docker-boshrelease.git
-
+- name: docker
+  version: '17'
+  git: https://github.com/cf-platform-eng/docker-boshrelease.git
 stemcells:
-  - name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2941
-
+- name: bosh-aws-xen-ubuntu-trusty-go_agent
+  version: 2941
 templates:
-  - docker-deployment.yml
-  - docker-jobs.yml
-  - docker-properties.yml
-  - docker-aws-vpc.yml
-
+- docker-deployment.yml
+- docker-jobs.yml
+- docker-properties.yml
+- docker-aws-vpc.yml
 meta:
   cf_api_url: CF_API_URL
   broker:
     host: EXTERNAL_HOST
-    username: 'containers'
-    password: 'containers'
+    username: containers
+    password: containers
   nats:
     user: nats
     password: nats
     port: 4222
     machines:
-      - 10.10.3.11
+    - 10.10.3.11
   subnet_ids:
     docker: SUBNET_ID
   security_groups:
-    - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS
+  - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS
   instance_type: m3.large
