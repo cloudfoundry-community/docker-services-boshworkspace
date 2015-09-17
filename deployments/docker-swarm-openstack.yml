@@ -1,22 +1,18 @@
 ---
 name: docker-swarm-openstack
 director_uuid: DIRECTOR_UUID
-
 releases:
-  - name: docker
-    version: 15
-    git: https://github.com/cf-platform-eng/docker-boshrelease.git
-
+- name: docker
+  version: '17'
+  git: https://github.com/cf-platform-eng/docker-boshrelease.git
 stemcells:
-  - name: bosh-openstack-kvm-ubuntu-trusty-go_agent
-    version: 2941
-
+- name: bosh-openstack-kvm-ubuntu-trusty-go_agent
+  version: 2941
 templates:
-  - docker-deployment.yml
-  - docker-properties.yml
-  - docker-swarm-jobs.yml
-  - docker-openstack.yml
-
+- docker-deployment.yml
+- docker-properties.yml
+- docker-swarm-jobs.yml
+- docker-openstack.yml
 meta:
   cf_api_uri: CF_API_URL
   openstack:
@@ -27,22 +23,24 @@ meta:
     api_key: OS_APIKEY
   broker:
     host: EXTERNAL_HOST
-    username: 'containers'
-    password: 'containers'
+    username: containers
+    password: containers
   nats:
     user: nats
     password: c1oudc0w
     port: 4222
     machines:
-      - NATS_HOST
+    - NATS_HOST
   subnet_ids:
     docker: SUBNET_ID
   security_groups:
-    - DOCKER_SG
+  - DOCKER_SG
   instance_type: m1.large
-  ipmask: "IPMASK"
+  ipmask: IPMASK
   dk1_quad: ".5"
-  dns_servers: [ "8.8.8.8", "8.8.4.4" ]
-  http_proxy: ~ # HTTP_PROXY
-  https_proxy: ~ # HTTPS_PROXY
-  no_proxy: ~ # NO_PROXY
+  dns_servers:
+  - 8.8.8.8
+  - 8.8.4.4
+  http_proxy: 
+  https_proxy: 
+  no_proxy: 

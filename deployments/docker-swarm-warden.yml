@@ -1,31 +1,27 @@
 ---
 name: docker-swarm-warden
 director_uuid: current
-
 releases:
-  - name: docker
-    version: 15
-    git: https://github.com/cf-platform-eng/docker-boshrelease.git
-
+- name: docker
+  version: '17'
+  git: https://github.com/cf-platform-eng/docker-boshrelease.git
 stemcells:
-  - name: bosh-warden-boshlite-ubuntu-trusty-go_agent
-    version: 389
-
+- name: bosh-warden-boshlite-ubuntu-trusty-go_agent
+  version: 389
 templates:
-  - docker-deployment.yml
-  - docker-properties.yml
-  - docker-swarm-jobs.yml
-  - docker-warden.yml
-  
+- docker-deployment.yml
+- docker-properties.yml
+- docker-swarm-jobs.yml
+- docker-warden.yml
 meta:
-  cf_api_uri: "https://api.10.244.0.34.xip.io"
+  cf_api_uri: https://api.10.244.0.34.xip.io
   broker:
-    host: "cf-containers-broker.10.244.0.34.xip.io"
-    username: 'containers'
-    password: 'containers'
+    host: cf-containers-broker.10.244.0.34.xip.io
+    username: containers
+    password: containers
   nats:
     user: nats
     password: nats
     port: 4222
     machines:
-      - 10.244.0.6
+    - 10.244.0.6
