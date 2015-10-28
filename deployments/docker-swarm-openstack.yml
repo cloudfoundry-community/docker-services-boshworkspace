@@ -36,7 +36,7 @@ meta:
   security_groups:
   - DOCKER_SG
   instance_type: m1.large
-  ipmask: IPMASK
+  ipmask: "IPMASK"
   dk1_quad: ".5"
   dns_servers:
   - 8.8.8.8

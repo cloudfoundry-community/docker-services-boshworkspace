@@ -16,6 +16,6 @@ task :update_releases, [:docker_version, :offline_version] do |_, args|
       'version' => args[:offline_version].to_s,
       'git' => 'https://github.com/cloudfoundry-community/docker-broker-images-boshrelease.git'
     } if size == 2
-    IO.write(file, deployemnt.to_yaml)
+    IO.write(file, deployemnt.to_yaml.gsub('IPMASK', '"IPMASK"'))
   end
 end
