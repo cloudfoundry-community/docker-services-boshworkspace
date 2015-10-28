@@ -14,13 +14,7 @@ templates:
 - docker-jobs.yml
 - docker-openstack.yml
 meta:
-  cf_api_uri: CF_API_URL
-  openstack:
-    net_id: CF_SUBNET1
-    url: OS_AUTHURL
-    tenant: OS_TENANT
-    username: OS_USERNAME
-    api_key: OS_APIKEY
+  cf_api_url: CF_API_URL
   broker:
     host: EXTERNAL_HOST
     username: containers
@@ -36,7 +30,7 @@ meta:
   security_groups:
   - DOCKER_SG
   instance_type: m1.large
-  ipmask: IPMASK
+  ipmask: "IPMASK"
   dk1_quad: ".5"
   dns_servers:
   - 8.8.8.8

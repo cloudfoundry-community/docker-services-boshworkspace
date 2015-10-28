@@ -1,5 +1,4 @@
 meta:
-  openstack: (( merge ))
   ipmask: (( merge ))
   dk1_quad: (( merge ))
   dns_servers: (( merge ))
