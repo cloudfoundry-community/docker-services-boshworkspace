@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "bosh-workspace", github: 'cloudfoundry-incubator/bosh-workspace', ref: 'spec-helpers'
+gem "bosh-workspace"
 
 group :development do
   gem "rake"

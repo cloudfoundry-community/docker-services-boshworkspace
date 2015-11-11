@@ -1,16 +1,3 @@
-GIT
-  remote: git://github.com/cloudfoundry-incubator/bosh-workspace.git
-  revision: 1d877ffcb3bbc05dc320171303e4faa8082060d9
-  ref: spec-helpers
-  specs:
-    bosh-workspace (0.9.3)
-      bosh_cli (>= 1.2905.0)
-      bosh_common (>= 1.2905.0)
-      hashdiff (~> 0.2.1)
-      membrane (~> 1.1.0)
-      rugged (~> 0.23.0b3)
-      semi_semantic (~> 1.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -25,6 +12,13 @@ GEM
       httpclient (= 2.4.0)
       multi_json (~> 1.1)
     bosh-template (1.3130.0)
+      semi_semantic (~> 1.1.0)
+    bosh-workspace (0.9.4)
+      bosh_cli (>= 1.2905.0)
+      bosh_common (>= 1.2905.0)
+      hashdiff (~> 0.2.1)
+      membrane (~> 1.1.0)
+      rugged (~> 0.23.0b3)
       semi_semantic (~> 1.1.0)
     bosh_cli (1.3130.0)
       blobstore_client (~> 1.3130.0)
@@ -135,6 +129,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bosh-workspace!
+  bosh-workspace
   guard-rspec
   rake
