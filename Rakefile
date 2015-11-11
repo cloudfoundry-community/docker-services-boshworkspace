@@ -1,4 +1,5 @@
 require 'yaml'
+require "rspec/core/rake_task"
 
 desc "Update release versions"
 task :update_releases, [:docker_version, :offline_version] do |_, args|
@@ -19,3 +20,6 @@ task :update_releases, [:docker_version, :offline_version] do |_, args|
     IO.write(file, deployemnt.to_yaml.gsub('IPMASK', '"IPMASK"'))
   end
 end
+
+task :default => :spec
+RSpec::Core::RakeTask.new
