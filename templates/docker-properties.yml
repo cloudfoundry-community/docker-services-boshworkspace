@@ -730,3 +730,209 @@ properties:
               bullets:
                 - 'Dedicated RethinkDB 1.14.0 server'
                 - 'RethinkDB 1.14.0 running inside a Docker container'
+      - id: 'fb68481a-a9ff-45a2-a88b-782c485e4400'
+        name: 'influxdb088'
+        description: 'InfluxDB service for application development and testing'
+        bindable: true
+        tags:
+          - 'influxdb'
+          - 'distributed'
+          - 'time-series'
+        metadata:
+          displayName: 'InfluxDB 0.8.8'
+          imageUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAACoFBMVEUAAAD///9WX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3SanooCAAAA33RSTlMAAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKiwtLi8wMjM0NTY4OTo8Pj9AQUJDREVHSElKS01OT1BRUlNUVVZXWFpbXF9gYWJjZGVnaWprbW5vcHFyc3R1dnd4ent8fX5/gIGCg4SFiImKi4yNjo+QkZKTlJaXmJqbnp+hoqOkpaaoqaqrrK6vsLGytLW2t7i5u7y9vr/AwsPExcbJysvMzc7S09TV1tfY2drb3N3e3+Dh4uPl5ufo6uvs7e7v8PHy8/T19vf4+fr7/P3+UGg1LAAABGlJREFUeF6l1/tX03Ucx/F3G7swbi0TEEQoSEXUJlSWFkZqUBYpSYal3Ui0skiINNSsMFNLTCrMrNAyzDbCRpUlEQpJbsUthwzG+1/pc3l/zvbdxbOznr+9fnicbZ/z2XcA1/2PGIbQ4hv6caAxEa5ZBGxsR16HJRb8LMq2xoJPE3bGgn8i3KNARm1rc6UhOvwJ4a9pLxnky54SFV5KuFbOlL/k/CAqDM/5BB4tEKsKZZPWqDAsaGz9joHzVkhbe8iFVGEUWGZ2MNDpxIByBMrc5ehoyg+Drbdngyr9ImrrELbobz7GVwdj094JRLtNzRJp3M1Nwg7dyq2pF0UjNwbhw/KYFtB8ho2u1xfHAZQ6rg59NBt4y5Gq0uJFKGujfQZx2AxBbVC4TotfIjxhkAczhfg+BFeq8HotbkDKwld8LRslIdhySdrR6Vp8P9lzbJh2XWFjIA5C2i7s1QdBi/UdEj/OxhHkeZdJUPzOkfqb6K66ET3O/fMgCEPqtwxM8ht9J8p+5iCuWbxWBX02+p5rMZn5fNQjlcXGVjnG5zCR8S+iOyksXs2AOOpGheeyMUDj06ry+/hV2AxhcTXioBiPkh02AlhR24AlFNMLdoth+s3/FDNOaPE20OCcp+vWJPN9VN1+uOUXDt7V83Gc1IjETn0g3uRFxMuLF+7oYcCuk9r4UN0WuuRzBwU6GQeJM04xvTYAr0KRD2WHzRBcfpsPh3bG81HIcK/Jj8+iNkcahGSZKe4a3Z7PXrUpPIWqXxue8rBxod0zcvIuCF+eF3l7dRKPEe3kH3FRHy3fqvA4k46tRmJ1mBuAl26n6bL4hbXe0fnePM1X75LE80fFcsaD6A6kloNq5h98e8V7OYYUPYYKv0f0tUwD2TKFK0HVJsGVjIBfE59FYoBs2w2gyla4SNlMpKrZWEfjFBDW9rm0Z3UAlpKHcwGWKPwWw4YzYnhs4fGMc9z25oKuhp/GIVO+wjXASt4/jugohBBsuac0DyCxuvXjTckAL0iyA36QdiIbRAkFaQAhuMKNiMen00rxSDNstg0L3ASatHgFXRaDnMX+k7v5YM8k4u+Ga2AnysrlvFfh2/h6jY11kXESUrvF1L9Bc1TcntQxeunwOEXhE1a2prWpuUWCfWxUCFWw89i+4iAMXUoPvZJk4zdy3IforddJPHsKsa+ubBZsnETWQb0Wr0QVuseY/bMoq7wsFaiECyhy0Vf4eS2GNS5GvupGWUcGBGT6ErV1B2EwLy2bA4Yn+7n9MN4vs2YZWhjwDgZqwsFZ7Ijt/vnIRfnk9JVDTmntebL/RMDQjHgaVJVIrdf8HhyIhN9G/FENs5tsg9z6E2L1p0fC29hRq3E3UpvV0W13oaclEyLhFxHHFtJ4AEP/gL7eCBAJPzHOwcty5GqfaVREbJtE0Uo5j8rVZYgKH1B3nN5jOx/deRAVthPupa1b8eaexywQHf4i7H8JUeKNhGtjwcZv5AsnxILBXNeHl/ekQBQ49v4Dj//tqcqTIOkAAAAASUVORK5CYII='
+          longDescription: 'Time series database for development and testing'
+          providerDisplayName: ''
+          documentationUrl: 'http://influxdb.com/docs/v0.8/introduction/getting_started.html'
+          supportUrl: 'https://customers.influxdb.com/'
+        dashboard_client:
+          id: 'influxdb-dashboard'
+          secret: 'influxdb-secret'
+          redirect_uri: (( meta.broker.protocol "://" meta.broker.host "/manage/auth/cloudfoundry/callback" ))
+        plans:
+          - id: '9de8d7a4-79d7-4ced-b6ba-53ea794cce29'
+            name: 'free'
+            container:
+              backend: 'docker'
+              image: 'tutum/influxdb'
+              tag: '0.8.8'
+              persistent_volumes:
+                - '/data'
+            credentials:
+              username:
+                key: 'INFLUXDB_USERNAME'
+                value: 'root'
+              password:
+                key: 'INFLUXDB_PASSWORD'
+                value: 'root'
+              uri:
+                prefix: 'http'
+                port: '8086/tcp'
+            description: 'Free Instance'
+            metadata:
+              costs:
+                - amount:
+                    usd: 0.0
+                  unit: 'MONTHLY'
+              bullets:
+                - 'Dedicated InfluxDB server'
+      - id: 'c78b2904-caa2-412a-ad59-0244dbb8fc6f'
+        name: 'mosquitto14'
+        description: 'Mosquitto service for application development and testing'
+        bindable: true
+        tags:
+          - 'mqtt'
+          - 'messaging'
+          - 'lightweight'
+        metadata:
+          displayName: 'Mosquitto 1.4'
+          imageUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAACkVBMVEUAAAD///9WX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3QCEH4oAAAA2nRSTlMAAAECAwQFBgcJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiQlJigpKissLS4vMDEyMzQ2Nzg5Ojs8PT9AQUJDREZHSUpLTE5PUFFSU1RVVlhZW1xdXl9jZGZnaGlqbG1ub3B0dXZ3eHl7fX5/gIKDhIWGh4iJi46QkZKTlJaXmJmanJ+goaKkpaanqKmqq6yvsLGys7S1t7i5uru8vb6/wMLDxMXGx8jJysvNzs/Q0dLT1NXW2Nna29ze3+Di4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6+/z9/oOOhDMAAAOqSURBVHhe7dbdVxR1AIfxb7sLCBJCKSqYINibFEJapJpUWQZaGWVmgZWFUoaWoUW+hZGWWGZYGQJBZYZaqSC+ZyhUKrCCLbv7/DXlzM5hAKSFrjr5XM1cfGbO+f7mYnTdv+g/hK9hBdfYvVPUs+Bx8gnO3jREnNYC/Dh8SPi+VgA+dQ4Bz/NAxfQOKBo8fs4HZWF6DHhmsHg58K5TUiF4pg0KO9cCrxnA8TH8NmEQOGwb+J6VWcQBqB8RNI6sgM5sBYotBr50BYlH1UHrDFM6Zm7zAPifDA6Pb4Szdxr0hiWNADStTFBQeNIZOJ4kSRkfXAbwV2SFBLl2xnnYP0qKyjsIwLlVxoNcqbmljTP+Ac/ugMoopZdcAqDqiTApds6qajfA+wPjBV3wSczCfQD8viY55K68Lcexao/oDw97vrrZ52vZVwnUrm8FoCbv8dW1HZY7ufXF7yCnH+yooldtNV+cstylmqKs0ZJyoKIffCs9a/dY8Ojm3DRr6kg3vvi+eMSf9K2t8o3ZI2XvQ8jviaNm3R+jYnp1Zv1TaSmJRuOijSKkh6Dejl2FndC19zzBlm7Daxhkxd14vBez6szMBnr09dYdgapqzGp/+rvd3XihBZZIznLsfXWb+q0bL7bwq9JED2w6hhXeDaMGxrMsnC3thM1aAXDYi9GFF1wDYedhjI6H6UFoG6Mt4MW/zINZXeoAWO8BcDZFIQ3wsrQH3oZDczow87457Ko4sRNfdXlBjLQIjoRKzTRFnIJl0/8g0M+pV8NlsEFGS2GxFAl79DB0JN181NKepc5+cQa0BiZ9GgqkO+AjaTvs0o2VWFWM6Qc7foBXZPYArJUehW1SXBvMl2s1Vs2ZfXEOnAiT2SSDjb2MN8E4/nPR0ryLlvblO3rh8F9grgLFwjeSNsJGyVkHJZImfI/V9oieeDnUykpdNEpK8OKJl1K9MF9S6Fs+S+8fa8dxbvxp3fhX2iSpFN6R9Dq0T5Ske49Z+vQkGy6FUnVXB+GSbvHTOVpy7YaDV+4Vsc6P2YWpFla6H3ecDX8OSYGjL5IU2wSbZJRxCLP2mRauheWyVQL3SNJkcI+UNM0LC0wdusyNUWu6iefB6XA7XmlNXw6FkpQPl26XWVypH4CWcQY+Ajmylwu5Br4bLkZLcuyE+uEKNHkHAN86r+Dkz/Y6ZC8bVsiokgbjjTEn6bR9WlPLuoC55trXq0eJBYtSTTwlyxG4OJAie/Ev7Tr8yP/lf/sa/guNjfN4Hpo9YgAAAABJRU5ErkJggg=='
+          longDescription: 'Mosquitto service for development and testing running inside a Docker container'
+          providerDisplayName: ''
+          documentationUrl: 'http://mosquitto.org/documentation/'
+          supportUrl: 'http://mosquitto.org/support/'
+        dashboard_client:
+          id: 'mosquitto-dashboard'
+          secret: 'moquitto-secret'
+          redirect_uri: (( meta.broker.protocol "://" meta.broker.host "/manage/auth/cloudfoundry/callback" ))
+        plans:
+          - id: '686e1adf-17f3-461b-a556-495abc34a6e9'
+            name: 'free'
+            container:
+              backend: 'docker'
+              image: 'ansi/mosquitto'
+              tag: 'latest'
+              persistent_volumes:
+                - '/data'
+            description: 'Free Instance'
+            metadata:
+              costs:
+                - amount:
+                    usd: 0.0
+                  unit: 'MONTHLY'
+              bullets:
+                - 'Dedicated Mosquitto server'
+      - id: '6b33e19e-26d3-11e5-a4ba-00155d3ca71c'
+        name: 'ipython'
+        description: 'IPython notebook server with the full SciPy stack + more'
+        bindable: true
+        tags:
+          - 'ipython'
+        metadata:
+          displayName: 'ipython'
+          imageUrl: ''
+          longDescription: 'Docker container for the [SciPy stack](../scipystack) and configured IPython notebook server.'
+          providerDisplayName: ''
+          documentationUrl: 'http://ipython.org/documentation.html'
+          supportUrl: 'https://github.com/ipython/ipython/wiki/Frequently-asked-questions'
+        dashboard_client:
+          id: 'ipython-dashboard'
+          secret: 'ipython-secret'
+          redirect_uri: (( meta.broker.protocol "://" meta.broker.host "/manage/auth/cloudfoundry/callback" ))
+        plans:
+          - id: 'd2b7da94-26d0-11e5-8396-00155d3ca71c'
+            name: 'free'
+            container:
+              backend: 'docker'
+              image: 'ipython/scipyserver'
+              tag: 'latest'
+              environment: ['USE_HTTP=1']
+            credentials:
+              password:
+                key: 'PASSWORD'
+              uri:
+                prefix: 'https'
+            description: 'Free Instance'
+            metadata:
+              costs:
+                - amount:
+                    usd: 0.0
+                  unit: 'MONTHLY'
+              bullets:
+                - 'Dedicated IPython running inside a Docker container'
+      - id: '52216016-3211-11e5-bf02-00155d3ca702'
+        name: 'rstudio'
+        description: 'RStudio® IDE for programming in R langauge'
+        bindable: true
+        tags:
+          - 'rstudio'
+          - 'r'
+        metadata:
+          displayName: 'RStudio®'
+          imageUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAACxFBMVEUAAABWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3RWX3QI/HwsAAAA63RSTlMAAQIDBAUGBwgJCgsMDQ4PEBITFBUWFxgZGhscHR4fICEiIyQlJicoKSorLC0uLzAyMzQ1Njo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZXF1eX2BhYmNkZWZnaGpsbm9wcXJzdHZ3eHp7fH1+f4CBgoOEhYaHiImKi4yNj5CTlJWWl5iZmpydnp+goaKjpKWoqaqrrK6vsLGys7S1tre4ubq7vL2+v8DBwsPExcbHyMnKy8zNzs/Q0dLT1NXW19jZ2tzd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+8B+UWwAABRdJREFUeF6ll/F/zHUcxz/ntjsztg0Vy6QJjWlKyiSCGQtEtYJKGsoyLWuklA1lG5ZIiQk2gqWxLcrQsMYYtRnQzV1z2z3/ib7f79187/vd3W6Px71++bwfrx+e9/3c+/N5v98f4VmBQRFTVuwrAsD6e0FGYu+gQNFuBfSOW3ceRf9ZrTYUnV8zKtLQPsBzGacArpftX79mwfz5yVmbdp6pAzid/rzwrdica8C13NkvRHVr8ToPHPFWdhVwJWeQD0CXnKvA4fjIznpwcO+J+4G69W0C4mqA47GBHjdrMDxTAo7aBK8A4wfQfGmaaEOJ5xyQavIMiNgGd78OEm0qNPcObOjpCdDvKFyeJnzq1Qvw81Ot/UfKoWSgaIdij0B5tN4NuQC5St4GR+sVE67bxj4o7aEDnISdodL6xg1Hcys1NW4brUnMCfg+QJOhLAclD0nBu9Bk0ctqB6qndhKq/oA0d8BLFmr6yR+3h5urp0+ZqtHkeV8ernTAwRgV8HAVjFcB5hM4RstBz99YJDxpcEoF/BWnGvF3qez6APApLBQKoIxxwrP65sI/0aqxEjJb4j7wS7jzy4q5+LQXQvASqFQN8xVqW07Dd1jiXeEnKHpFClfhVFNJ8RcTZIIpG8eHKuFZSDcq0YC75Le4vfbevN/oYLMUnsfeKAuA8mGS88RFLrjd0jxudleCrGb7S6r9YkbKZTZIwVm2pklaunPHwSq4M1ayFnFvpgroD0vkNfI0x4VGRS7AGJdhGpqO8mvGZpa55W4zFnmdDKO0gF9dgImqtdjBamk5xiazar5s4zUJv5Za4RNg3k6Bku9vg1Qz4hRFQnQ5SYZvgFhHoZwkDUB8Q71J9IThvgHRFUqmPtcC3mlsGC+mUB/uEzA4HyYpt3CjeznrY7GniqUc6OIF0HK6Ypefhd3yQXXwsXBXHTmigLVmL4C3o6KGzJi5sqAa2NpDObK3x2oAhygVR5kvvABsFkuDzWYHauI7SM7MexQLjVZQLuB1z4BD3JfUaLNZCp2lNuYK98doAckguDfOMyBiblJS0puTBvR1msa4q/CZ0Go4CP4d7QmgV6+0ZlrbQ9oNCNsCjR+ZWwG8b0GnxytomidaaTh4/xPTHQ2yGpV9G/PgzKNCr2TwnsZzNDdJgrIoyet4DA6oVVRNY1sHKT8zK3NNJdQNlcygUsg0CaE/SG0dZSU9AzdDtVyHuh6F94XQH2Xfl8m8Cm7LJXHQZRokpv4y+b7OAUub+FPuCElWysKE7jq3q6AUwg65HG+HVKErKK1LWqAodgEmGwOMTq8YlhmEMP7N9ZiADpqSpi+q3eNSky+xUQHkLU5ZMDJEds0XYbq0JsDelFl9DWpR1Zf1J38EUAAVANh/CJX9YfXU9xcGkQ1QNUQt67rGYsyCW7vzf5In0lmFu3btuQXLnXXdzq6OQvTamF8Ge41qY1Fbm6u5FoWFhYbK3xggraFRJVxzso/QPEcIQ3BotzQwqa1N21x7lDJSaLTEfsMZRDZQ+5jzYl3HpDZXtb07AfrDluuod0WzYYuyzWFgUtu7dsAIyYfliQkPlPiVlcNOgEFshTkTEuIX1nAjUB0wtCOOmGpDJ+vQBzNKDS69Z1BHHO2QJcwj8q5Wu6ky2+2JMLdS8QpmBKtDlnbMk9WpW1d3uXcyU7hihRjUMU8/aPqWftDUj7o+pY66/g7b/o/7/j84/H/y+P/o8v/Z5//D0/+nr/+Pb7+f//8D7AyyegDiVsgAAAAASUVORK5CYII='
+          longDescription: 'RStudio® IDE for programming in R langauge'
+          providerDisplayName: 'RStudio®'
+          documentationUrl: 'https://support.rstudio.com/hc/en-us/categories/200035113-Documentation'
+          supportUrl: 'https://support.rstudio.com'
+        dashboard_client:
+          id: 'rstudio-dashboard'
+          secret: 'rstudio-secret'
+          redirect_uri: (( meta.broker.protocol "://" meta.broker.host "/manage/auth/cloudfoundry/callback" ))
+        plans:
+          - id: '4d457046-3211-11e5-bd0e-00155d3ca702'
+            name: 'free'
+            container:
+              backend: 'docker'
+              image: 'rocker/rstudio'
+              tag: 'latest'
+            credentials:
+              username:
+                key: 'USER'
+              password:
+                key: 'PASSWORD'
+              uri:
+                prefix: 'rstudio'
+            description: 'Free Instance'
+            metadata:
+              costs:
+                - amount:
+                    usd: 0.0
+                  unit: 'MONTHLY'
+              bullets:
+                - 'RStudio® IDE running inside a Docker container' 
+      - id: '2kfj34ac-ad34-0pa0-12f7-d3f2a28h08e3'
+        name: 'postgresql94'
+        description: 'PostgreSQL 9.4 service for application development and testing'
+        bindable: true
+        tags:
+          - 'postgresql94'
+          - 'postgresql'
+          - 'relational'
+        metadata:
+          displayName: 'Postgresql9.4'
+          longDescription: 'A PostgreSQL 9.4 service for development and testing running inside a Docker container'
+          providerDisplayName: 'Pivotal Software'
+          documentationUrl: 'http://docs.run.pivotal.io'
+          supportUrl: 'http://support.run.pivotal.io/home'
+        dashboard_client:
+          id: 'p-postgresql94-client'
+          secret: 'p-postgresql94-secret'
+          redirect_uri: (( meta.broker.protocol "://" meta.broker.host "/manage/auth/cloudfoundry/callback" ))
+        plans:
+          - id: '1a23xxxc-4145-4g18-8ee3-axxxxxa53x1d'
+            name: 'free'
+            container:
+              backend: 'docker'
+              image: 'postgres'
+              tag: '9.4'
+              persistent_volumes:
+                - '/data'
+            credentials:
+              username:
+                key: 'POSTGRES_USER'
+              password:
+                key: 'POSTGRES_PASSWORD'
+              dbname:
+                key: 'POSTGRES_DBNAME'
+                value: 'postgres'
+              uri:
+                prefix: 'postgres94'
+            description: 'Free Trial'
+            metadata:
+              costs:
+                - amount:
+                    usd: 0.0
+                  unit: 'MONTHLY'
+              bullets:
+                - 'Dedicated PostgreSQL 9.4 server'
+                - 'PostgreSQL 9.4 running inside a Docker container'

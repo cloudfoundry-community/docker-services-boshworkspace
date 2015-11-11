@@ -1,5 +1,6 @@
 docker-services-boshworkspace
 =============================
+[![Build Status](https://img.shields.io/travis/cloudfoundry-community/docker-services-boshworkspace/master.svg?style=flat-square)](https://travis-ci.org/cloudfoundry-community/docker-services-boshworkspace)
 
 The fastest way to deploy [Docker Services](https://github.com/cf-platform-eng/docker-boshrelease) in combination with [Cloud Foundry](http://www.cloudfoundry.org) onto [bosh-lite](https://github.com/cloudfoundry/bosh-lite).
 

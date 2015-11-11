@@ -1,0 +1,17 @@
+meta:
+  cf_api_url: api.example.com
+  broker:
+    host: foo.example.com
+    username: bar
+    password: foo
+  nats:
+    user: bar
+    password: c1oudc0w
+    port: 4222
+    machines:
+    - 10.10.5.8
+  subnet_ids:
+    docker: foo_subnet_id
+  security_groups:
+  - foo_security_group
+  instance_type: m1.xlarge
