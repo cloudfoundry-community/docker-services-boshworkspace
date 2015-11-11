@@ -36,8 +36,8 @@ networks:
   subnets:
   - cloud_properties:
       security_groups:
-      - SECURITY_GROUP_ACCESSIBLE_BY_CF_RUNNERS
-      subnet: SUBNET_ID
+      - foo_security_group
+      subnet: foo_subnet_id
     dns:
     - 10.10.0.2
     gateway: 10.10.5.1
@@ -54,14 +54,14 @@ properties:
     cookie_secret: e7247dae-a252-4393-afa3-2219c1c02efd
     docker_url: null
     fetch_images: null
-    host: EXTERNAL_HOST
+    host: foo.example.com
     max_containers: 20
-    password: containers
+    password: foo
     services:
     - bindable: true
       dashboard_client:
         id: p-postgresql93-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-postgresql93-secret
       description: PostgreSQL 9.3 service for application development and testing
       id: 2fd814ac-d1f7-4d4a-a4f7-d386cd8fd8e3
@@ -108,7 +108,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-mysql56-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-mysql56-secret
       description: MySQL 5.6 service for application development and testing
       id: 24736f4a-72b8-4298-96f7-b48c4045ddfd
@@ -155,7 +155,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-redis28-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-redis28-secret
       description: Redis 2.8 service for application development and testing
       id: 3101b971-1044-4816-a7ac-9ded2e028079
@@ -196,7 +196,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-mongodb26-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-mongodb26-secret
       description: MongoDB 2.6 service for application development and testing
       id: 23eefc93-6814-4db8-bbf0-eaa6c3c5fecc
@@ -245,7 +245,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-couchdb16-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-couchdb16-secret
       description: CouchDB 1.6 service for application development and testing
       id: b76f6d51-f701-48c2-9614-7240fe580346
@@ -292,7 +292,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-neo4j21-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-neo4j21-secret
       description: Neo4j 2.1 service for application development and testing
       id: 5d7b4893-bd37-495d-8f94-cf45e1fdf74a
@@ -331,7 +331,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-arangodb22-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-arangodb22-secret
       description: ArangoDB 2.2 service for application development and testing
       id: 3f97963d-2224-488f-b945-1fb2dff61a72
@@ -378,7 +378,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-rabbitmq33-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-rabbitmq33-secret
       description: RabbitMQ 3.3 service for application development and testing
       id: 3ce3d09a-90f0-437b-82f7-6a33194025c7
@@ -422,7 +422,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-memcached14-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-memcached14-secret
       description: Memcached 1.4 service for application development and testing
       id: 7affa902-d8fb-46db-b13d-f688cebda211
@@ -512,7 +512,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-elasticsearch13-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-elasticsearch13-secret
       description: Elasticsearch 1.3 service for application development and testing
       id: aa0bf747-1a11-4d11-aaca-b3878a17b9ea
@@ -550,7 +550,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-logstash14-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-logstash14-secret
       description: Logstash 1.4 service for application development and testing
       id: e72113ed-fde7-45fd-8758-aff41e6c5507
@@ -589,7 +589,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: nats-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: nats-dashboard-secret
       description: NATS is a lightweight cloud messaging system
       id: b9310aba-2fa4-11e4-b626-a6c5e4d22fb7
@@ -633,7 +633,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: etcd-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: etcd-dashboard-secret
       description: Etcd key-value storage
       id: 211411a0-2da1-11e4-852f-a6c5e4d22fb7
@@ -676,7 +676,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: consul-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: consul-dashboard-secret
       description: Consul key-value storage
       id: 2cb838d0-2df9-11e4-a506-a6c5e4d22fb7
@@ -720,7 +720,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: rethinkdb-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: rethinkdb-dashboard-secret
       description: RethinkDB is built to store JSON documents
       id: 617b9186-2e5b-11e4-af5d-a6c5e4d22fb7
@@ -761,7 +761,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: influxdb-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: influxdb-secret
       description: InfluxDB service for application development and testing
       id: fb68481a-a9ff-45a2-a88b-782c485e4400
@@ -807,7 +807,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: mosquitto-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: moquitto-secret
       description: Mosquitto service for application development and testing
       id: c78b2904-caa2-412a-ad59-0244dbb8fc6f
@@ -844,7 +844,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: ipython-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: ipython-secret
       description: IPython notebook server with the full SciPy stack + more
       id: 6b33e19e-26d3-11e5-a4ba-00155d3ca71c
@@ -884,7 +884,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: rstudio-dashboard
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: rstudio-secret
       description: "RStudio\xAE IDE for programming in R langauge"
       id: 52216016-3211-11e5-bf02-00155d3ca702
@@ -924,7 +924,7 @@ properties:
     - bindable: true
       dashboard_client:
         id: p-postgresql94-client
-        redirect_uri: http://EXTERNAL_HOST/manage/auth/cloudfoundry/callback
+        redirect_uri: http://foo.example.com/manage/auth/cloudfoundry/callback
         secret: p-postgresql94-secret
       description: PostgreSQL 9.4 service for application development and testing
       id: 2kfj34ac-ad34-0pa0-12f7-d3f2a28h08e3
@@ -968,9 +968,9 @@ properties:
       - postgresql94
       - postgresql
       - relational
-    username: containers
+    username: bar
   cf:
-    api_url: CF_API_URL
+    api_url: api.example.com
   docker: null
   docker_broker_images: null
   env:
@@ -980,10 +980,10 @@ properties:
   fetch_containers: null
   nats:
     machines:
-    - 10.10.3.11
-    password: nats
+    - 10.10.5.8
+    password: c1oudc0w
     port: 4222
-    user: nats
+    user: bar
   swarm_manager: null
 releases:
 - name: docker
@@ -993,7 +993,7 @@ resource_pools:
     ephemeral_disk:
       size: 163840
       type: gp2
-    instance_type: m3.large
+    instance_type: m1.xlarge
   name: default
   network: default
   stemcell:

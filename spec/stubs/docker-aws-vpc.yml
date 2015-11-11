@@ -15,10 +15,3 @@ meta:
   security_groups:
   - foo_security_group
   instance_type: m1.xlarge
-  ipmask: "10.10"
-  dk1_quad: ".6"
-  dns_servers:
-  - 3.3.5.5
-  http_proxy: http_proxy.example.com
-  https_proxy: http_proxy.example.com
-  no_proxy: localhost
